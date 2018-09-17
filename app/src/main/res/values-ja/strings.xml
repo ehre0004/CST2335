@@ -2,4 +2,12 @@
 <resources>
     <string name="hello_message">こんにちは！</string>
     <string name="ButtonText">これはボタンです</string>
+    <string name="loginText">ログイン</string>
+
+    <string name="login">お名前</string>
+    <string name="password">パスワード</string>
+
+    <string name="radiobutton">ラジオボタン</string>
+    <string name="checkbox">チェックボックス</string>
+    <string name="aswitch">スイッチ</string>
 </resources>
