@@ -4,10 +4,18 @@
     <string name="ButtonText">I\'m a button</string>
     <string name="loginText">Login</string>
 
-    <string name="login">Login Name</string>
-    <string name="password">Password</string>
+    <string name="loginHint">Login Name</string>
+    <string name="passwordHint">Password</string>
+    <string name="loginName"></string>
+    <string name="password"></string>
+    <string name="loginButton">Login</string>
 
     <string name="radiobutton">RadioButton</string>
     <string name="checkbox">CheckBox</string>
     <string name="aswitch">Switch</string>
+
+    <string name="dialog_title">End</string>
+    <string name="dialog_message">Finish the activity?</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
 </resources>

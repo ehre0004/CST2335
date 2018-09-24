@@ -4,6 +4,6 @@
     <string name="ButtonText">これはボタンです</string>
     <string name="loginText">ログイン</string>
 
-    <string name="login">お名前</string>
-    <string name="password">パスワード</string>
+    <string name="loginHint">お名前</string>
+    <string name="passwordHint">パスワード</string>
 </resources>

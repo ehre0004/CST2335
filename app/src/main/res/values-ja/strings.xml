@@ -4,10 +4,18 @@
     <string name="ButtonText">これはボタンです</string>
     <string name="loginText">ログイン</string>
 
-    <string name="login">お名前</string>
-    <string name="password">パスワード</string>
+    <string name="loginHint">お名前</string>
+    <string name="passwordHint">パスワード</string>
+    <string name="loginName"></string>
+    <string name="password"></string>
+    <string name="loginButton">ログイン</string>
 
     <string name="radiobutton">ラジオボタン</string>
     <string name="checkbox">チェックボックス</string>
     <string name="aswitch">スイッチ</string>
+
+    <string name="dialog_title">おわります</string>
+    <string name="dialog_message">これをおわりませんか</string>
+    <string name="ok">はい</string>
+    <string name="cancel">キャンセル</string>
 </resources>
