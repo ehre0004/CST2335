@@ -28,6 +28,7 @@ public class ListItemsActivity extends Activity {
         setContentView(R.layout.activity_list_items);
         Log.i(ACTIVITY_NAME, "in onCreate()");
 
+        // image button
         imageButt = findViewById(R.id.imageButton);
         imageButt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,12 +37,13 @@ public class ListItemsActivity extends Activity {
             }
         });
 
+        // switch
         aSwitch = findViewById(R.id.switch1);
         aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                CharSequence textOn = "Switch is On";
-                CharSequence textOff = "Switch is Off";
+                String textOn = getString(R.string.switchOn);
+                String textOff = getString(R.string.switchOff);
                 int duration = Toast.LENGTH_SHORT; //= Toast.LENGTH_LONG if Off
 
                 if (isChecked) {
@@ -55,6 +57,7 @@ public class ListItemsActivity extends Activity {
             }
         });
 
+        // checkbox
         aCheck = findViewById(R.id.checkBox);
         aCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -67,7 +70,7 @@ public class ListItemsActivity extends Activity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             // user selects OK
-                            Intent resultIntent = new Intent(  );
+                            Intent resultIntent = new Intent();
                             resultIntent.putExtra("Response", "Here is my response");
                             setResult(Activity.RESULT_OK, resultIntent);
                             finish();

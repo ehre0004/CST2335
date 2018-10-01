@@ -25,13 +25,25 @@ public class StartActivity extends Activity {
                 startActivityForResult(intent, 50);
             }
         });
+
+        Button chatbutt = findViewById(R.id.chatbutt);
+        chatbutt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(ACTIVITY_NAME, "User clicked Start Chat");
+                // intent
+                Intent intent = new Intent(StartActivity.this, ChatWindow.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
     public void onActivityResult(int requestCode, int responseCode, Intent data) {
         if (requestCode == 50) {
             Log.i(ACTIVITY_NAME, "Returned to StartActivity.onActiveResult");
-        } else if (requestCode == Activity.RESULT_OK) {
+        }
+        if (responseCode == Activity.RESULT_OK) {
             String messagePassed = data.getStringExtra("Response");
             Toast toast = Toast.makeText(getApplicationContext(), "ListItemsActivity passed: "+messagePassed, Toast.LENGTH_LONG);
             toast.show();

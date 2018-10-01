@@ -18,4 +18,10 @@
     <string name="dialog_message">これをおわりませんか</string>
     <string name="ok">はい</string>
     <string name="cancel">キャンセル</string>
+
+    <string name="switchOn">スイッチはオンになった</string>
+    <string name="switchOff">スイッチオッフになった</string>
+
+    <string name="chatbutt">会話を始める</string>
+    <string name="sendbutt">送ります</string>
 </resources>
