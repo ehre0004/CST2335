@@ -21,9 +21,9 @@ import java.util.ArrayList;
 public class ChatWindow extends Activity {
     protected static final String ACTIVITY_NAME = "ChatWindow";
     private ArrayList<String> chatHistory = new ArrayList<>();
-    private ListView chatbox;
-    private EditText chattext;
-    private Button sendbutt;
+    private static ListView chatbox;
+    private static EditText chattext;
+    private static Button sendbutt;
     private ChatDatabaseHelper dbHelper;
     private SQLiteDatabase db;
 
@@ -32,7 +32,7 @@ public class ChatWindow extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_window);
 
-        // instantiating variables
+        // initializing variables
         chatbox = findViewById(R.id.chatbox);
         chattext = findViewById(R.id.chattext);
         sendbutt = findViewById(R.id.sendbutt);
