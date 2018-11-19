@@ -36,12 +36,22 @@ public class StartActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+        Button weatherbutt = findViewById(R.id.weatherbutt);
+        weatherbutt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(ACTIVITY_NAME, "User clicked Weather Button");
+                Intent intent = new Intent(StartActivity.this, WeatherForecastActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
     public void onActivityResult(int requestCode, int responseCode, Intent data) {
         if (requestCode == 50) {
-            Log.i(ACTIVITY_NAME, "Returned to StartActivity.onActiveResult");
+            Log.i(ACTIVITY_NAME, "Returned to StartActivity.onActivityResult");
         }
         if (responseCode == Activity.RESULT_OK) {
             String messagePassed = data.getStringExtra("Response");

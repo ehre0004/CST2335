@@ -52,8 +52,32 @@ public class WeatherForecastActivity extends Activity {
         progressBar.setProgress(0);
         progressBar.setVisibility(View.VISIBLE);
 
-        final ForecastQuery attempt = new ForecastQuery();
+        ForecastQuery attempt = new ForecastQuery();
         attempt.execute("http://api.openweathermap.org/data/2.5/weather?q=ottawa,ca&APPID=d99666875e0e51521f0040a3d97d0f6a&mode=xml&units=metric");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i(ACTIVITY_NAME, "in onResume()");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i(ACTIVITY_NAME, "in onStart()");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i(ACTIVITY_NAME, "in onPause()");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i(ACTIVITY_NAME, "in onStop()");
     }
 
     private class ForecastQuery extends AsyncTask<String, Integer, String> {
@@ -83,10 +107,10 @@ public class WeatherForecastActivity extends Activity {
                 image.setImageBitmap(bm);
             } else
                 Log.w(ACTIVITY_NAME, "File not found");
-            currentTemp.setText("Current Temperature: " + currentT + "°C");
-            minTemp.setText("Min Temperature: "+minT+ "°C");
-            maxTemp.setText("Max Temperature: "+maxT+ "°C");
-            wind.setText("Wind Speed: "+windSpeed);
+            currentTemp.setText(getResources().getString(R.string.currentTemp)+": " + currentT + "°C");
+            minTemp.setText(getResources().getString(R.string.minTemp)+": "+minT+ "°C");
+            maxTemp.setText(getResources().getString(R.string.maxTemp)+": "+maxT+ "°C");
+            wind.setText(getResources().getString(R.string.windSpeed)+": "+windSpeed);
         }
 
         @Override
@@ -120,6 +144,7 @@ public class WeatherForecastActivity extends Activity {
                 parser.setInput(in.getInputStream(), null);
                 parser.nextTag();
                 parser.require(XmlPullParser.START_TAG, ns, "current");
+                // loop through tags and pull information needed into appropriate variables
                 while (parser.next() != XmlPullParser.END_TAG) {
                     if (parser.getEventType() != XmlPullParser.START_TAG) {
                         continue;
