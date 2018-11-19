@@ -5,6 +5,7 @@
     android:id="@+id/rellay"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     tools:context=".ChatWindow">
 
     <ListView
@@ -27,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/sendbutt"
+        android:layout_toLeftOf="@id/sendbutt"
         android:layout_alignTop="@+id/sendbutt"
         android:background="@color/white"
         android:inputType="text" />
